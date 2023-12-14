@@ -6,6 +6,7 @@ class Person(Model):
     id = IntegerField(primary_key=True)
     # birthday = DateField()
     is_relative = BooleanField()
+    
 
     class Meta:
         database = db

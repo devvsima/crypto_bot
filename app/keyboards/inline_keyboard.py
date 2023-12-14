@@ -30,3 +30,13 @@ async def sub_ikb():
     )
     return ikb
 
+async def add_favorite(coin):
+    ikb = InlineKeyboardMarkup(
+        resize_keyboard=True,
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(text="⭐️Add to favorite", callback_data=f"{coin}_add"),
+            ],
+        ],
+    )
+    return ikb

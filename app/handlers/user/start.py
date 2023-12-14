@@ -7,4 +7,4 @@ from database.connect import newUsr
 async def comm_start(message: types.Message):
     text = _(f"👋, <a href='tg://user?id={message.from_user.id}'>{(message.from_user.full_name)}</a>")
     await message.answer(text)
-    newUsr(message.from_user.id)
+    # newUsr(message.from_user.id)
