@@ -11,10 +11,10 @@ def get_user_well(user_id: int) -> str:
     for element in response:
         for i in tList:
             if element["symbol"] == i:
-                text += f"{element['symbol']} --- {element['price']}\n"
+                text += f"{element['symbol']} - {element['price']}\n"
     return text
 
 def searc_coin(text: str) -> str:
     URL=f"https://api.binance.com/api/v3/ticker/price?symbol={text}"
     response = requests.get(URL).json()
-    return(f"{response['symbol']} - {response['price']}")
+    return(f"<blockquote>{(response['symbol'])[:-4]}</blockquote>\n{response['price']}")

@@ -1,19 +1,7 @@
-from peewee import *
+from pymongo import MongoClient
+from data.config import mongodb_url
 
-db = SqliteDatabase('database/database.sqlite')
+client = MongoClient(mongodb_url)
+db = client["name"]
 
-class Person(Model):
-    id = IntegerField(primary_key=True)
-    # birthday = DateField()
-    is_relative = BooleanField()
-    
-
-    class Meta:
-        database = db
-
-Person.create_table()
-
-
-def newUsr(id):
-    newUsr = Person.create(id=id, is_relative=True)
-    
+coll_users = db.users
