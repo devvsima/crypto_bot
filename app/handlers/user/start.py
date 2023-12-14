@@ -7,4 +7,4 @@ from database.users import add_user
 async def comm_start(message: types.Message):
     text = _(f"👋, <a href='tg://user?id={message.from_user.id}'>{(message.from_user.full_name)}</a>")
     await message.answer(text)
-    # await add_user(id=message.from_user.id)
+    await add_user(id=message.from_user.id)

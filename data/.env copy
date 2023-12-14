@@ -1,4 +1,4 @@
-TOKEN="token"
+TOKEN="you_token"
 ADMINS="2312312"
 BANNED="12312312"
 MONGODB_URL="mongodb://localhost:27017"
