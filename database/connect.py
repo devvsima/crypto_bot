@@ -5,3 +5,4 @@ client = MongoClient(mongodb_url)
 db = client["crypto_bot"]
 
 coll_users = db.users
+coll_about = db.about

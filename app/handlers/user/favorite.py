@@ -11,8 +11,6 @@ async def favorite(callback: types.CallbackQuery):
     await callback.answer('Added')
 
 
-
-
 @dp.message_handler(Text("⭐️ Favorites"))
 @dp.message_handler(Command('favorites'))
 async def favorite_list(message: types.Message):

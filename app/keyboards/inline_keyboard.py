@@ -3,6 +3,7 @@ from aiogram.types import (
     InlineKeyboardMarkup,
     InlineKeyboardButton,
 )
+from database.about import get_coins_list
 
 
 async def base_ikb():
@@ -30,7 +31,7 @@ async def sub_ikb():
     )
     return ikb
 
-async def add_favorite(coin):
+async def add_favorite_ikb(coin):
     ikb = InlineKeyboardMarkup(
         resize_keyboard=True,
         inline_keyboard=[
@@ -39,4 +40,11 @@ async def add_favorite(coin):
             ],
         ],
     )
+    return ikb
+
+
+async def about_ikb():
+    ikb = InlineKeyboardMarkup()
+    for i in await get_coins_list():
+        ikb.add(InlineKeyboardButton(text=i, callback_data=f"{i}_about"))
     return ikb
