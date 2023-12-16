@@ -1,17 +1,16 @@
 import requests
 
-
-tList = ["ATOMUSDT", "BTCUSDT"] 
-
-def get_user_well(user_id: int) -> str:
+def get_user_well(user_list: int) -> str:
     URL='https://www.binance.com/api/v3/ticker/price'
     response = requests.get(URL).json() 
 
     text = 'Favorites:\n'
     for element in response:
-        for i in tList:
+        for i in user_list:
             if element["symbol"] == i:
-                text += f"{element['symbol']} - {element['price']}\n"
+                symbol = str(element['symbol']).replace("USDT", "")
+                price = str(element['price'])[:-4]
+                text += f"<blockquote>{symbol} - {price}</blockquote>\n"
     return text
 
 def searc_coin(text: str) -> str:
