@@ -1,6 +1,6 @@
 import requests
 
-def get_user_well(user_list: int) -> str:
+def get_user_well(user_list) -> str:
     URL='https://www.binance.com/api/v3/ticker/price'
     response = requests.get(URL).json() 
 

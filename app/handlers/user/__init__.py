@@ -4,6 +4,7 @@ from .settings import dp
 from .subscribe import dp
 from .favorite import dp
 from .about import dp
+from .favorite_delete import dp
 
 from .find_coin import dp
 
