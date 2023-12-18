@@ -39,7 +39,7 @@ async def add_favorite_ikb(coin):
                 InlineKeyboardButton(text="⭐️Add to favorite", callback_data=f"{coin}_add"),
             ],
         ],
-    )
+        )
     return ikb
 
 
@@ -51,7 +51,7 @@ async def about_ikb():
 
 async def edit_list_ikb():
     ikb = InlineKeyboardMarkup()
-    ikb.add(InlineKeyboardButton(text='✏️ Edit list', callback_data='edit_list'))
+    ikb.add(InlineKeyboardButton(text='✏️ Edit', callback_data='edit_list'))
     return ikb
 
 async def delete_favorite_ikb(id):

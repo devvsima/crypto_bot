@@ -14,4 +14,4 @@ async def delete_list_coin(callback: types.CallbackQuery):
     coin = callback.data.replace("_del", "")
     await del_favorite_list_coin(id=callback.from_user.id,
                                  coin=coin)
-    await callback.answer(text=f"Coin delete")
+    await callback.answer(text=f"{coin} delete")
