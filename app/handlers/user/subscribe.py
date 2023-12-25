@@ -11,11 +11,11 @@ async def check_sub_channel(channel):
 async def comm_subcribe(message: types.Message):
     if await check_sub_channel(await bot.get_chat_member(chat_id="you_channel_id",user_id=message.from_user.id)):
         await message.answer(
-            text=f"Вы подписанны на все каналы!",
+            text=f"You are subscribed to all channels!",
         )
     else:
         await message.answer(
-            text=_(f"Подпишись на каналы:"),
+            text=_(f"Subscribe to the channels:"),
             reply_markup=await sub_ikb()
         )
 @dp.callback_query_handler(text=("sub_check"))

@@ -59,3 +59,15 @@ async def delete_favorite_ikb(id):
     for i in await users.get_favorite_list(id):
         ikb.add(InlineKeyboardButton(text=i, callback_data=f"{i}_del"))
     return ikb
+
+async def settings_ikb():
+    ikb = InlineKeyboardMarkup(
+        resize_keyboard=True,
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(text="🔔", callback_data=f"settings_notification_on"),
+                InlineKeyboardButton(text="🔕", callback_data=f"settings_notification_off"),
+            ],
+        ],
+        )
+    return ikb

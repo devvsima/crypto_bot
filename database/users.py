@@ -9,6 +9,9 @@ async def add_user(id) -> None:
 async def get_users_notification() -> list:
     return coll_users.find({"alert":True},{"_id":1})
 
+async def set_user_notification(id: int, bool: bool) -> list:
+    coll_users.update_one({"_id":id},  {"$set":{"alert": bool}})
+
 async def add_favorite_list(id, coin) -> None:
     coll_users.update_one({"_id":id},  {"$addToSet":{"list":coin}})
 

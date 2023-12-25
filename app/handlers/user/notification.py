@@ -8,7 +8,7 @@ import schedule
 import asyncio
 
 async def run_pending():
-    schedule.every(1).day.at("16:37", "Europe/Kyiv").do(lambda: asyncio.create_task(send_notification()))
+    schedule.every(1).day.at("11:20", "Europe/Kyiv").do(lambda: asyncio.create_task(send_notification()))
     while True:
         schedule.run_pending()
         await asyncio.sleep(0)
