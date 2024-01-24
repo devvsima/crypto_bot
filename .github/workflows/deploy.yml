@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    environment: server
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
