@@ -30,6 +30,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           script: |
-            cd /path/to/your/bot
+            cd ${{ secrets.REMOTE_PATH }}
             git pull origin main
             python main.py
