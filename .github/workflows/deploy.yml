@@ -23,5 +23,3 @@ jobs:
             cd ${{ secrets.REMOTE_PATH }}
             git pull origin main --rebase
             python3 main.py
-
-            
