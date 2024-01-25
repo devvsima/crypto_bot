@@ -33,3 +33,5 @@ jobs:
             cd ${{ secrets.REMOTE_PATH }}
             git pull origin main
             python main.py
+
+            
